@@ -16,6 +16,16 @@ export default <Document>{
       type: 'string'
     },
     {
+      name: 'matric',
+      title: 'Matric',
+      type: 'string'
+    },
+    {
+      name: 'faculty',
+      title: 'Faculty',
+      type: 'string'
+    },
+    {
       name: 'image',
       title: 'Image',
       type: 'url'

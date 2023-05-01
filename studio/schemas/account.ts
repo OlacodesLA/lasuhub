@@ -33,7 +33,7 @@ export default <Document>{
       name: 'user',
       title: 'User',
       type: 'reference',
-      to: { type: 'user' }
+      to: { type: 'users' }
     }
   ]
 };
