@@ -68,13 +68,14 @@ export default function MyModal({isOpen, setIsOpen, setPosts, user, setInput, in
               _ref: user._id,
             },
           };
-          client.create(doc).then(() => {
-            setIsOpen(false)
-          });
           client.fetch(feedQuery).then((data) => {
             setPosts(data);
             // setLoading(false);
           });
+          client.create(doc).then(() => {
+            setIsOpen(false)
+          });
+
         } else if(input){
             const doc = {
                 _type: 'posts',
@@ -85,12 +86,14 @@ export default function MyModal({isOpen, setIsOpen, setPosts, user, setInput, in
                   _ref: user._id,
                 },
               };
-              client.create(doc).then(() => {
-                setIsOpen(false)
-              });
+
               client.fetch(feedQuery).then((data) => {
                 setPosts(data);
                 // setLoading(false);
+              });
+
+              client.create(doc).then(() => {
+                setIsOpen(false)
               });
         } else{
           setFields(true);

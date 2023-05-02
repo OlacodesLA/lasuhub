@@ -1,3 +1,4 @@
+//@ts-nocheck
 import { CloudArrowUpIcon, LockClosedIcon, ServerIcon } from '@heroicons/react/20/solid'
 import Image from 'next/image';
 

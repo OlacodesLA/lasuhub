@@ -87,7 +87,7 @@ export default function Tabs({userPosts, userSaves}:any) {
                               <div className="flex w-full justify-between items-center">
                             <Link href={`/app/profile/${post?.postedBy?._id}`} className="flex gap-2 ">
                               <div className=" relative w-9 h-9 rounded-full">
-                              <Image src={post?.postedBy?.image} className="w-9 h-9 rounded-full" alt="" srcset="" />
+                              <Image src={post?.postedBy?.image} fill className="w-9 h-9 rounded-full" alt="" srcset="" />
                               </div>
                               <div className="flex flex-col">
                                   <p className="text-[14px] font-bold font-inter">{post?.postedBy?.name}</p>
@@ -157,7 +157,7 @@ export default function Tabs({userPosts, userSaves}:any) {
             >
               <ul>
                 {userSaves?.map((post) => (
-                            <div key={post?._id} className=" relative w-full h-full gap-2 bg-white shadow-sm shadow-purple-600/20 rounded-xl flex px-1">
+                            <div key={post?._id} className="my-5 relative w-full h-full gap-2 bg-white shadow-sm shadow-purple-600/20 rounded-xl flex px-1">
                             <div className="flex flex-col w-full p-3">
                               <div className="flex w-full justify-between items-center">
                             <Link href={`/app/profile/${post?.postedBy?._id}`} className="flex gap-2 ">
@@ -178,9 +178,9 @@ export default function Tabs({userPosts, userSaves}:any) {
                                {post?.about}
                             </p>
                             {post?.image?.asset?.url &&  
-             <div className="relative w-full h-[300px] rounded-md">
-             <Image src={post?.image?.asset?.url} fill className="w-full h-[300px] object-cover object-center rounded-md " alt="" srcset="" />
-           </div>
+                            <div className="relative w-full h-[300px] rounded-md">
+                            <Image src={post?.image?.asset?.url} fill className="w-full h-[300px] object-cover object-center rounded-md " alt="" srcset="" />
+                          </div>
                             }
                             </Link>
                             <div className="flex justify-between w-full items-center">
@@ -206,7 +206,7 @@ export default function Tabs({userPosts, userSaves}:any) {
                                 {post?.comments?.slice(0,3).map((comment)=>{
                                     return(
                                       <div  key={comment?.postedBy?._id} className="w-7 h-7 relative">
-                                        <Image className="w-7 h-7 border-2 border-white rounded-full dark:border-white" src={comment?.postedBy?.image} alt=""/>
+                                        <Image className="w-7 h-7 border-2 border-white rounded-full dark:border-white" fill src={comment?.postedBy?.image} alt=""/>
                                         </div>
                                         )
                                 })}

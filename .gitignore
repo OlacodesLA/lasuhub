@@ -15,7 +15,7 @@
 # production
 /build
 studio/
-
+/studio
 # misc
 .DS_Store
 *.pem

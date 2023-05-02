@@ -38,6 +38,7 @@
             _id,
             name,
             level,
+            matric,
             department,
             faculty,
             image
@@ -48,8 +49,9 @@
           _key,
           postedBy->{
             _id,
-            userName,
+            name,
             level,
+            matric,
             department,
             faculty,
             image
@@ -83,9 +85,10 @@
       save[]{
         postedBy->{
           _id,
-          userName,
+          name,
           level,
           department,
+          matric,
           faculty,
           image
         },
@@ -122,6 +125,7 @@
         name,
         level,
         department,
+        matric,
         faculty,
         image
       },
@@ -156,16 +160,18 @@
                 level,
                 department,
                 faculty,
+                matric,
                 image
               },
               save[]{
                 _key,
                 postedBy->{
                   _id,
-                  userName,
+                  name,
                   level,
                   department,
                   faculty,
+                  matric,
                   image
                 },
               },
@@ -197,18 +203,20 @@
       destination,
       postedBy->{
         _id,
-        userName,
+        name,
         level,
         department,
+        matric,
         faculty,
         image
       },
       save[]{
         postedBy->{
           _id,
-          userName,
+          name,
           level,
           department,
+          matric,
           faculty,
           image
         },
@@ -229,9 +237,10 @@
       about,
       postedBy->{
         _id,
-        userName,
+        name,
         level,
         department,
+        matric,
         faculty,
         image
       },
@@ -239,8 +248,9 @@
         _key,
         postedBy->{
           _id,
-          userName,
+          name,
           level,
+          matric,
           department,
           faculty,
           image
@@ -262,3 +272,53 @@
     link,
   }`;
 
+
+  export const blogQuery = `*[_type == 'blog'] | order(_createdAt desc) {
+    _id,
+    name,
+    title,
+    category,
+    slug,
+    readingtime,
+    description,
+    content,
+    image{
+      asset->{
+        url
+      }
+    },
+    author->{
+      _id,
+      name,
+      image,
+
+    }
+  }`;
+
+
+  export const blogDetailsQuery = ({slug}) => {
+  
+  const query = `*[_type == 'blog' && slug.current == '${slug}' ] {
+    _id,
+    name,
+    title,
+    category,
+    readingtime,
+    content,
+    slug,
+    description,
+    image{
+      asset->{
+        url
+      }
+    },
+    author->{
+      _id,
+      name,
+      image,
+
+    }
+  }`
+
+  return query
+  }

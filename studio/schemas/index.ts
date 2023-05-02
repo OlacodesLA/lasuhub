@@ -7,6 +7,9 @@ import posts from "./posts"
 import postedBy from "./postedBy"
 import save from "./save"
 import sponsored from "./sponsored"
+import blog from "./blog"
+import author from "./author"
+import blockContent from "./blockContent"
 
 
-export const schemaTypes = [users, posts, postedBy, save, comments, sponsored, account, verificationToken]
+export const schemaTypes = [users, posts, postedBy, save, comments, blog, sponsored, author, blockContent, account, verificationToken]

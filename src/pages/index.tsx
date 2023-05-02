@@ -11,6 +11,7 @@ import Landing from '@/components/Landing';
 import Features from '@/components/Landing/Features';
 import Comment from '@/components/Containers/Middle/Comment';
 import Blog from '@/components/Landing/Blog';
+import Footer from '@/components/Landing/Footer';
 import Image from 'next/image';
 
 const Home: FC = () => {
@@ -48,6 +49,7 @@ const Home: FC = () => {
       <Landing user={user}/>
       <Features/>
       <Blog/>
+      <Footer/>
       </div>
     <h1>Anyone can view this page</h1>
     {
