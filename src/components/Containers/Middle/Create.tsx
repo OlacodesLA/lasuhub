@@ -224,7 +224,7 @@ export default function MyModal({isOpen, setIsOpen, setPosts, user, setInput, in
                         <input type="file" name="file" onChange={uploadImage} className="z-20 opacity-0 cursor-pointer h-full w-full " />
                         <div className="absolute flex justify-center items-center gap-2">
                           
-                            <img className={`h-[300px] w-full object-cover  ${checkFile?'opacity-1':'opacity-0'}`} src={selectedFile ? URL.createObjectURL(selectedFile) : null } />
+                            <img className={`h-[300px] w-full object-cover  ${checkFile?'opacity-1':'opacity-0'}`} alt='' src={selectedFile ? URL.createObjectURL(selectedFile) : null } />
                         </div>     
                         <div className="absolute w-10 h-10 bg-white rounded-full -bottom-2 -right-1 p-1">
                         {/* <Camera color="text-purple-500"/> */}

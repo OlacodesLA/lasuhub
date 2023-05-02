@@ -1,3 +1,4 @@
+//@ts-nocheck
 import React from "react";
 import {useState, useEffect} from "react"
 import { client } from "@/lib/sanity";
@@ -70,7 +71,7 @@ const addEmoji = (e) => {
               <img src={user?.image} className="w-12 h-12 rounded-full" alt="" srcset="" />
               <div className="relative w-full">
               <input type="text"  value={input} onChange={(e) => setInput(e.target.value)} onClick={()=> setCreate(true)} name="search" placeholder="Share something..." className="w-full h-10 text-sm bg-gray-100 focus:ring-blue-500 focus:border-blue-500  rounded-[70px] pl-5"  />
-              <button className="absolute right-2 top-[9px]" onClick={() => setShowEmojis(!showEmojis)}>
+              <button className="absolute right-2 top-[9px]" aria-label="Button" onClick={() => setShowEmojis(!showEmojis)}>
                 <img src="/images/happy.png" className="w-5" alt="" srcset="" />
               </button>
               {showEmojis && (

@@ -90,7 +90,7 @@ const Middle = ({posts, setPosts, user}:any) => {
                 </svg>
                 {post?.comments &&
                 <div className="flex gap-1">
-                    <p className="text-base">{post?.comments?.length}</p>  <p className="text-base">Comment</p> 
+                    <p className="tetxbase">{post?.comments?.length}</p>  <p className="text-base">Comment</p> 
                 </div>
                 }
                 </div>
@@ -98,13 +98,13 @@ const Middle = ({posts, setPosts, user}:any) => {
             <div className="flex -space-x-4">
                 {post?.comments?.slice(0,3).map((comment)=>{
                     return(
-                        <div key={comment?.postedBy?._id} className="w-7 h-7 relative">
-                        <Image fill className="w-7 h-7 object-cover border-2 border-white rounded-full dark:border-white" src={comment?.postedBy?.image} alt=""/>
+                        <div key={comment?.postedBy?._id} className="w-7 h-7">
+                        <Image fill className="w-7 h-7 border-2 border-white rounded-full dark:border-white" src={comment?.postedBy?.image} alt=""/>
                         </div>
                         )
                 })}
                 {post?.comments?.length > 3 &&  
-                <Link href="#" className="flex items-center justify-center w-7 h-7 text-xs font-medium text-white bg-gray-700 border-2 border-white rounded-full hover:bg-gray-600 dark:border-gray-800" href="#">
+                <Link href="#" className="flex items-center justify-center w-7 h-7 text-xs font-medium text-white bg-gray-700 border-2 border-white rounded-full hover:bg-gray-600 dark:border-gray-800">
                    + {post?.comments?.length - 3}
                     </Link>
                     }

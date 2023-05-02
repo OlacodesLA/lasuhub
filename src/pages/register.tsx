@@ -145,7 +145,7 @@ const imagesubmission = () => {
 <div className="h-24 w-24 cursor-pointer relative flex justify-center items-center border-2  bg-gray-200 rounded-full">
                         <input type="file" name="file" onChange={uploadImage} className="z-20 opacity-0 cursor-pointer h-full w-full " />
                         <div className="absolute flex justify-center items-center gap-2">
-                            <img className={`h-24 w-24 object-cover rounded-full ${checkFile?'opacity-1':'opacity-0'}`} src={selectedFile ? URL.createObjectURL(selectedFile) : (null || user?.image)} />
+                            <img className={`h-24 w-24 object-cover rounded-full ${checkFile?'opacity-1':'opacity-0'}`} alt="myupload" src={selectedFile ? URL.createObjectURL(selectedFile) : (null || user?.image)} />
                         </div>     
                         <div className="absolute w-10 h-10 bg-white rounded-full -bottom-2 -right-1 p-1">
                         <Camera color="text-purple-500"/>

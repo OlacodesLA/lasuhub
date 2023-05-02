@@ -62,7 +62,7 @@ const PostDetails = ({postDetail, user, setComment, comment, addingComment, addC
                     )
                 })}
                 {postDetail?.comments?.length > 3 &&  
-                <Link href="#" className="flex items-center justify-center w-7 h-7 text-xs font-medium text-white bg-gray-700 border-2 border-white rounded-full hover:bg-gray-600 dark:border-gray-800" href="#">
+                <Link href="#" className="flex items-center justify-center w-7 h-7 text-xs font-medium text-white bg-gray-700 border-2 border-white rounded-full hover:bg-gray-600 dark:border-gray-800">
                    + {postDetail?.comments?.length - 3}
                     </Link>
                     }
