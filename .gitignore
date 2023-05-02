@@ -16,6 +16,8 @@
 /build
 studio/
 /studio
+./studio
+/studio/
 # misc
 .DS_Store
 *.pem
