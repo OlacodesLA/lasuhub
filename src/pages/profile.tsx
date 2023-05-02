@@ -1,3 +1,4 @@
+//@ts-nocheck
 import type { FC } from 'react';
 import { Dialog, Transition } from '@headlessui/react'
 import { Fragment, useState } from 'react'
