@@ -23,7 +23,7 @@ const style = "w-5 h-5 group-hover:text-white"
     {
     name:"PQ",
     icon: <PQ style={style}/>,
-    link:"/pq"
+    link:"/app/pq"
     },
     {
     name:"Saved",

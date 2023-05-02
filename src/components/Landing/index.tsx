@@ -25,10 +25,10 @@ const Landing = ({user}) => {
           src="/img/leaf.png"
           alt=""
         />
-        <span className="flex items-center px-1 text-xl text-purple-600">
+        {/* <span className="flex items-center px-1 text-xl text-purple-600">
           <span className="font-medium">100% Organic food</span>
           <img className="w-auto h-8" src="/img/vegetable.png" alt="" />
-        </span>
+        </span> */}
         <h1
           className="pt-4 text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tighter leading-tight whitespace-nowrap"
         >
@@ -51,7 +51,7 @@ const Landing = ({user}) => {
             Explore menu
           </button>
         </div>
-        <div className="flex pt-20">
+        {/* <div className="flex pt-20">
           <img className="w-24" src="/img/chef.png" alt="" />
           <div className="pt-5 pl-3">
             <div className="text-xl font-bold leading-relaxed">Chef of the month</div>
@@ -60,7 +60,7 @@ const Landing = ({user}) => {
             </div>
             <div className="font-bold text-purple-600 leading-relaxed">80+ famous dishes</div>
           </div>
-        </div>
+        </div> */}
         <div>
           <div className="flex md:hidden pt-8 justify-end space-x-1 font-bold">
             <span>Powered by</span>
@@ -79,15 +79,15 @@ const Landing = ({user}) => {
         <div
           className="absolute right-0 lg:-right-6 top-0 lg:-top-10 flex flex-col py-5 px-7 rounded-2xl shadow-xl bg-white/80 backdrop-blur-xl hover:-translate-y-2 hover:shadow-2xl transition-all duration-300"
         >
-          <div className="flex -space-x-3">
+          {/* <div className="flex -space-x-3">
             <div
               v-for="i in 3"
               className="w-13 h-12 rounded-full border-4 border-white object-cover overflow-hidden"
             >
               <img src="" alt="" />
             </div>
-          </div>
-          <div className="pt-3 font-bold">Happy customers</div>
+          </div> */}
+          <div className="pt-3 font-bold">Easy Access</div>
           <div className="flex items-center text-gray-600 leading-relaxed">
             <StarIcon style="w-5 h-5"  />
             <span className="pl-1">4.9 (+2.5k Ratings)</span>

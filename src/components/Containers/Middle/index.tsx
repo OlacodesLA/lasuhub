@@ -21,8 +21,6 @@ const Middle = ({posts, setPosts, user}:any) => {
 
 
 
-
-
   return <div className="flex justify-center "> 
     <div className=" w-[55%] h-full ">
     {console.log(posts)}

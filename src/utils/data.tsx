@@ -324,3 +324,18 @@
 
   return query
   }
+
+
+  export const pq = `*[_type == 'pq'] | order(_createdAt desc) {
+    _id,
+    course,
+    level,
+    session,
+    department,
+    image{
+      asset->{
+        url
+      }
+    },
+
+  }`;
