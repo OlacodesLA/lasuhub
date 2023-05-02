@@ -12,6 +12,7 @@ import { v4 as uuidv4 } from "uuid";
 import Upload from "./Upload";
 import Link from "next/link";
 import {AiFillCaretRight} from "react-icons/ai"
+import Image from 'next/image';
 
 const Middle = ({posts, setPosts, user}:any) => {
   const [savingPost, setSavingPost] = useState(false);
@@ -44,7 +45,9 @@ const Middle = ({posts, setPosts, user}:any) => {
             <div className="flex flex-col w-full p-3">
               <div className="flex w-full justify-between items-center">
             <Link href={`/app/profile/${post?.postedBy?._id}`} className="flex gap-2 ">
-              <img src={post?.postedBy?.image} className="w-9 h-9 rounded-full" alt="" srcset="" />
+              <div className="relative w-9 h-9 ">
+              <Image src={post?.postedBy?.image} fill className="w-9 h-9 object-cover rounded-full" alt="" srcset="" />
+              </div>
               <div className="flex flex-col">
                 <div className="flex gap-1 items-center">
                   <p className="text-[14px] font-bold font-inter">{post?.postedBy?.name}</p>
@@ -67,7 +70,9 @@ const Middle = ({posts, setPosts, user}:any) => {
             </p>
             {post?.image?.asset?.url &&  
             <div className="mt-1 w-full">
-            <img src={post?.image?.asset?.url} className="w-[900px] h-[300px] object-cover object-center rounded-md " alt="" srcset="" />
+              <div className="relative w-full h-[300px] rounded-md">
+              <Image src={post?.image?.asset?.url} fill className="w-full h-[300px] object-cover object-center rounded-md " alt="" srcset="" />
+              </div>
             </div>
             }
             </Link>
@@ -85,7 +90,7 @@ const Middle = ({posts, setPosts, user}:any) => {
                 </svg>
                 {post?.comments &&
                 <div className="flex gap-1">
-                    <p className="tetxbase">{post?.comments?.length}</p>  <p className="text-base">Comment</p> 
+                    <p className="text-base">{post?.comments?.length}</p>  <p className="text-base">Comment</p> 
                 </div>
                 }
                 </div>
@@ -93,8 +98,10 @@ const Middle = ({posts, setPosts, user}:any) => {
             <div className="flex -space-x-4">
                 {post?.comments?.slice(0,3).map((comment)=>{
                     return(
-                        <img key={comment?.postedBy?._id} className="w-7 h-7 border-2 border-white rounded-full dark:border-white" src={comment?.postedBy?.image} alt=""/>
-                    )
+                        <div key={comment?.postedBy?._id} className="w-7 h-7 relative">
+                        <Image fill className="w-7 h-7 object-cover border-2 border-white rounded-full dark:border-white" src={comment?.postedBy?.image} alt=""/>
+                        </div>
+                        )
                 })}
                 {post?.comments?.length > 3 &&  
                 <Link href="#" className="flex items-center justify-center w-7 h-7 text-xs font-medium text-white bg-gray-700 border-2 border-white rounded-full hover:bg-gray-600 dark:border-gray-800" href="#">

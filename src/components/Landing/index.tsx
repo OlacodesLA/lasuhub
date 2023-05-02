@@ -2,6 +2,7 @@
 import React from "react";
 import { HamburgerIcon, FuelerIcon, StarIcon } from "@/helpers/svgs";
 import Link from "next/link";
+import Image from 'next/image';
 
 const Landing = ({user}) => {
 

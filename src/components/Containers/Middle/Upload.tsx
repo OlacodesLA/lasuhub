@@ -1,4 +1,3 @@
-//@ts-nocheck
 import React from "react";
 import {useState, useEffect} from "react"
 import { client } from "@/lib/sanity";

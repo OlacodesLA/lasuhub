@@ -11,6 +11,7 @@ import Landing from '@/components/Landing';
 import Features from '@/components/Landing/Features';
 import Comment from '@/components/Containers/Middle/Comment';
 import Blog from '@/components/Landing/Blog';
+import Image from 'next/image';
 
 const Home: FC = () => {
   const [user, setUser] = useState(null)

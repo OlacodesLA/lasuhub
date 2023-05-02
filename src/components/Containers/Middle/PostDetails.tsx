@@ -3,6 +3,7 @@ import React from "react";
 import Link from "next/link";
 import Navigation from "@/components/Navigation";
 import Comment from "./Comment";
+import Image from 'next/image';
 
 const PostDetails = ({postDetail, user, setComment, comment, addingComment, addComment}:any) => {
   return <div>
@@ -16,7 +17,9 @@ const PostDetails = ({postDetail, user, setComment, comment, addingComment, addC
             <div className="flex flex-col w-full p-3">
               <div className="flex w-full justify-between items-center">
             <div className="flex gap-2 ">
-              <img src={postDetail?.postedBy?.image} className="w-9 h-9 rounded-full" alt="" srcset="" />
+              <div className="w-9 h-9 relative">
+              <Image src={postDetail?.postedBy?.image} fill className="w-9 h-9 object-contain rounded-full" alt="" srcset="" />
+              </div>
               <div className="flex flex-col">
                   <p className="text-[14px] font-bold font-inter">{postDetail?.postedBy?.name}</p>
                   <p className="text-[12px]">{postDetail?.postedBy?.matric}</p>
@@ -27,8 +30,8 @@ const PostDetails = ({postDetail, user, setComment, comment, addingComment, addC
                {postDetail?.about}
             </p>
             {postDetail?.image?.asset?.url &&  
-            <div className="mt-1 w-full">
-            <img src={postDetail?.image?.asset?.url} className="w-[900px] h-[300px] object-cover object-center rounded-md " alt="" srcset="" />
+            <div className="relative w-full h-[300px] rounded-md">
+              <Image src={postDetail?.image?.asset?.url} fill className="w-full h-[300px] object-cover object-center rounded-md " alt="" srcset="" />
             </div>
             }
             <div className="flex justify-between w-full items-center">
@@ -53,7 +56,9 @@ const PostDetails = ({postDetail, user, setComment, comment, addingComment, addC
             <div className="flex -space-x-4">
                 {postDetail?.comments?.slice(0,3).map((comment)=>{
                     return(
-                        <img key={comment?.postedBy?._id} className="w-7 h-7 border-2 border-white rounded-full dark:border-white" src={comment?.postedBy?.image} alt=""/>
+                        <div key={comment?.postedBy?._id} className="relative w-7 h-7 rounded-full">
+                        <Image src={comment?.postedBy?.image} fill className="w-7 h-7 object-cover object-center rounded-full " alt="" srcset="" />
+                      </div>
                     )
                 })}
                 {postDetail?.comments?.length > 3 &&  
@@ -65,7 +70,9 @@ const PostDetails = ({postDetail, user, setComment, comment, addingComment, addC
             </div>
             <div className="flex flex-wrap mt-6 gap-3">
               <Link href={`/app/profile/${user?._id}`}>
-                <img src={user?.image} className="w-10 h-10 rounded-full cursor-pointer" alt="user-profile" />
+                <div className="relative w-10 h-10 rounded-full">
+                <Image src={user?.image} fill className="w-10 h-10 object-cover rounded-full cursor-pointer" alt="user-profile" />
+                </div>
               </Link>
               <input
                 className=" flex-1 border-gray-100 outline-none border-2 p-2 rounded-2xl focus:border-gray-300"

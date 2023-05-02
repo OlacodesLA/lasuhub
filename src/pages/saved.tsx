@@ -74,8 +74,8 @@ function TagsInput() {
       </div>
       <div>
         <code contentEditable="true" suppressContentEditableWarning={true}>
-          {tags.map((tag) => {
-            <span style={{ color: "orange" }}>{tag}</span>;
+          {tags.map((tag, index) => {
+            <span key={index} style={{ color: "orange" }}>{tag}</span>;
           })}
         </code>
       </div>
@@ -89,9 +89,9 @@ function TagsInput() {
             setText([...e.target.textContent.split(regex)]);
           }}
         >
-          {text.map((words) => {
+          {text.map((words, index) => {
             if (words === targetWord) {
-              return <ColorfulText>{words}</ColorfulText>;
+              return <ColorfulText key={index}>{words}</ColorfulText>;
             } else {
               return words;
             }

@@ -11,6 +11,7 @@ import Loader from "@/components/Loader"
 import Camera from '@/helpers/svgs/Camera';
 import { userQuery, updateUserQuery } from '@/utils/data';
 import {client, urlFor} from '@/lib/sanity'
+import Image from 'next/image';
 
 
 const people = [

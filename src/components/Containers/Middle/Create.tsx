@@ -7,6 +7,7 @@ import { feedQuery } from '@/utils/data';
 import { data } from "emoji-mart";
 import Picker from '@emoji-mart/react'
 import {client} from '@/lib/sanity'
+import Image from 'next/image';
 
 
 export default function MyModal({isOpen, setIsOpen, setPosts, user, setInput, input}) {
@@ -186,7 +187,9 @@ export default function MyModal({isOpen, setIsOpen, setPosts, user, setInput, in
                         </div>
                         <div className="relative ">
                     <button className="" name='emoji'  type='' onClick={() => setShowEmojis(!showEmojis)}>
-                <img src="/images/happy.png" className="w-5" alt="" srcset="" />
+                      <div className="relative w-5 h-5">
+                        <Image src="/images/happy.png" fill className="w-5 h-5" alt="" srcset="" />
+                      </div>
               </button>
               <div className="z-50">
               {showEmojis && (
@@ -220,6 +223,7 @@ export default function MyModal({isOpen, setIsOpen, setPosts, user, setInput, in
                     <div className="w-full h-[300px] cursor-pointer relative flex justify-center items-center border-2  bg-gray-200 rounded-xl">
                         <input type="file" name="file" onChange={uploadImage} className="z-20 opacity-0 cursor-pointer h-full w-full " />
                         <div className="absolute flex justify-center items-center gap-2">
+                          
                             <img className={`h-[300px] w-full object-cover  ${checkFile?'opacity-1':'opacity-0'}`} src={selectedFile ? URL.createObjectURL(selectedFile) : null } />
                         </div>     
                         <div className="absolute w-10 h-10 bg-white rounded-full -bottom-2 -right-1 p-1">

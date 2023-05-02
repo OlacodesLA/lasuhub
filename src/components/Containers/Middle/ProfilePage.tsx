@@ -8,6 +8,7 @@ import { client } from "@/lib/sanity";
 import { userCreatedPostsQuery, userSavedPostsQuery } from "@/utils/data";
 import Link from "next/link";
 import Tabs from "./Tabs";
+import Image from 'next/image';
 
 
 const ProfilePage = ({userId, authUser}:any) => {
@@ -68,7 +69,9 @@ const ProfilePage = ({userId, authUser}:any) => {
               <div className="img-wrap w-full h-[100px] ">
                 {user?.cover ?
                 (
-                  <img src={user?.cover} className="w-full h-[170px] object-cover object-center rounded-t-xl"  alt="" srcset="" />
+                  <div className="relative w-full  h-[170px] object-cover object-center">
+                  <Image src={user?.cover} fill className="w-full h-[170px] object-cover object-center rounded-t-xl"  alt="" srcset="" />
+                  </div>
                 ):(
                   <div className="w-full rounded-t-xl h-[170px] bg-gradient-to-r p-[2px] from-[#6EE7B7] via-[#3B82F6] to-[#9333EA]"></div>
                 )}
@@ -79,7 +82,9 @@ const ProfilePage = ({userId, authUser}:any) => {
                   <div className="rounded-full ">
                   <div className="bg-white rounded-full">
                     <Link href={`/app/profile/${user?._id}`}>
-                <img src={user?.image}   className=" object-cover w-[120px] h-[120px] rounded-full p-[4px]" alt="" srcset="" />
+                      <div className="relative w-[120px] h-[120px] rounded-full">
+                <Image src={user?.image}  fill className=" object-cover w-[120px] h-[120px] rounded-full p-[4px]" alt="" srcset="" />
+                </div>
                 </Link>
                 </div>
                 </div>
@@ -119,8 +124,10 @@ const ProfilePage = ({userId, authUser}:any) => {
             <svg className="h-12 w-12 text-gray-300" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
               <path fill-rule="evenodd" d="M18.685 19.097A9.723 9.723 0 0021.75 12c0-5.385-4.365-9.75-9.75-9.75S2.25 6.615 2.25 12a9.723 9.723 0 003.065 7.097A9.716 9.716 0 0012 21.75a9.716 9.716 0 006.685-2.653zm-12.54-1.285A7.486 7.486 0 0112 15a7.486 7.486 0 015.855 2.812A8.224 8.224 0 0112 20.25a8.224 8.224 0 01-5.855-2.438zM15.75 9a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z" clip-rule="evenodd" />
             </svg>
-            <img src={user?.image} className="h-12 w-12 text-gray-300 rounded-full" alt="" srcset="" />
+            <div className="relative h-12 w-12 rounded-full">
+            <Image src={user?.image} fill className="h-12 w-12 text-gray-300 rounded-full" alt="" srcset="" />
             <button type="button" className="rounded-md bg-white px-2.5 py-1.5 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50">Change</button>
+            </div>
           </div>
         </div>
 

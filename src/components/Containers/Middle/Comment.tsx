@@ -6,6 +6,7 @@
 import { Fragment } from 'react'
 import { ChatBubbleLeftEllipsisIcon, TagIcon, UserCircleIcon } from '@heroicons/react/20/solid'
 import { log } from 'console'
+import Image from 'next/image'
 
 
 
@@ -26,12 +27,15 @@ export default function Comment({postDetail}:any) {
                 <span className="absolute top-5 left-5 -ml-px h-full w-0.5 bg-purple-200" aria-hidden="true" />
               ) : null}
               <div className="relative flex items-start space-x-3">
-                    <div className="relative">
-                      <img
-                        className="flex h-10 w-10 items-center justify-center rounded-full bg-gray-400 ring-8 ring-white"
+                    <div className=" relative">
+                      <div className="relative h-10 w-10">
+                      <Image
+                        className="flex  items-center justify-center rounded-full bg-gray-400 ring-8 ring-white"
                         src={activityItem.postedBy.image}
+                        layout='fill'
                         alt=""
                       />
+                      </div>
 
                       <span className="absolute -bottom-0.5 -right-1 rounded-tl  px-0.5 py-px">
                         <ChatBubbleLeftEllipsisIcon className="h-5 w-5 text-gray-400" aria-hidden="true" />

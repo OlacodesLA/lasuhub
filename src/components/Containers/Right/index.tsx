@@ -4,7 +4,7 @@ import {FaCaretDown} from "react-icons/fa"
 import Chevron from "@/helpers/Chevron";
 import Link from "next/link";
 import Sponsored from "./Sponsored";
-
+import Image from 'next/image';
 
 const Right = ({user}:any) => {
   return (
