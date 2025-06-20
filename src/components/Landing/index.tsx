@@ -33,7 +33,7 @@ const Landing = ({user}) => {
           className="pt-4 text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tighter leading-tight whitespace-nowrap"
         >
           Join <span className="whitespace-nowrap text-purple-600">Lagos <br />
-          State University Faculty of Engineering</span> <br />
+          State University <br /> Faculty of Engineering</span> <br />
            Learning Revolution
         </h1>
         <p className="pt-8 sm:text-lg max-w-md font-normal text-gray-600 leading-relaxed">
